@@ -16,7 +16,7 @@ class Proxy(http.server.BaseHTTPRequestHandler):
 
 
 def main():
-    port = os.environ.get('PORT', 8080)
+    port = int(os.environ.get('PORT', 8080))
     server = socketserver.TCPServer(('', port), Proxy)
     server.serve_forever()
 
